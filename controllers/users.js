@@ -1,6 +1,7 @@
 import { userSchemaModel } from "../models/users.js";
 import mongoose from "mongoose";
 
+// Get all users
 export const getAllUsers = async (req, res) => {
   try {
     const allusers = await userSchemaModel.find();
@@ -11,6 +12,7 @@ export const getAllUsers = async (req, res) => {
   }
 };
 
+// Add a user
 export const AddUser = async (req, res) => {
   const newUser = new userSchemaModel(req.body);
 
@@ -22,6 +24,7 @@ export const AddUser = async (req, res) => {
   }
 };
 
+// Get a user by id
 export const CallUserById = async (req, res) => {
   try {
     const { id: _id } = req.params;
@@ -37,6 +40,7 @@ export const CallUserById = async (req, res) => {
   }
 };
 
+// Delete a user
 export const DeleteUser = async (req, res) => {
   try {
     const { id: _id } = req.params;
@@ -52,6 +56,7 @@ export const DeleteUser = async (req, res) => {
   }
 };
 
+// Update a user
 export const UpdateUser = async (req, res) => {
   try {
     const { id: _id } = req.params;
