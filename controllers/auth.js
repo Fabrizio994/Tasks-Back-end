@@ -2,7 +2,7 @@ import { userSchemaModel } from "../models/users.js";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-const JWT_SECRET = "sjkabfdihasbfdhkafjdiausf";
+
 export const register = async (req, res) => {
   const { username, password, email } = req.body;
 
