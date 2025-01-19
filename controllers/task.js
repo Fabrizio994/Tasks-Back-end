@@ -1,7 +1,5 @@
-// controllers/task.js
 import { taskSchemaModel } from "../models/task.js";
 
-// Ottieni tutti i task
 export const getAllTasks = async (req, res) => {
   try {
     const userId = req.user.id;
@@ -12,7 +10,6 @@ export const getAllTasks = async (req, res) => {
   }
 };
 
-// Aggiungi un nuovo task
 export const addTask = async (req, res) => {
   const userId = req.user.id;
   const newTask = new taskSchemaModel({ ...req.body, user: userId });
@@ -23,8 +20,7 @@ export const addTask = async (req, res) => {
     res.status(409).json({ message: error.message });
   }
 };
-
-// Ottieni un task per ID
+//
 export const getTaskById = async (req, res) => {
   const { id } = req.params;
   const userId = req.user.id;
@@ -37,7 +33,6 @@ export const getTaskById = async (req, res) => {
   }
 };
 
-// Elimina un task per ID
 export const deleteTask = async (req, res) => {
   const { id } = req.params;
   const userId = req.user.id;
@@ -53,7 +48,6 @@ export const deleteTask = async (req, res) => {
   }
 };
 
-// Aggiorna un task per ID
 export const updateTask = async (req, res) => {
   const { id } = req.params;
   const userId = req.user.id;
